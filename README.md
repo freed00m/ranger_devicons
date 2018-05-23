@@ -2,7 +2,7 @@
 
 This plugin introduces a new linemode that prefixes file names with a file icon
 
-![image](https://raw.githubusercontent.com/alexanderjeurissen/ranger_devicons/master/screenshot.png)
+![image](https://raw.githubusercontent.com/freed00m/ranger_devicons/master/screenshot.png)
 
 ## Prerequisites
 This plugin uses glyphs from a Font Awesome 5. So in order for this plugin to work you need to
