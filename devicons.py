@@ -248,7 +248,10 @@ def devicon(file):
   
 
   if file.is_link:
-      folder_ico = ''
+      if file.is_directory:
+        folder_ico = ''
+      else:
+        folder_ico = ''
       return dir_node_exact_matches.get(file.relative_path, folder_ico)
 
   if file.is_directory: 
