@@ -20,8 +20,8 @@ file_node_extensions = {
     'ejs'      : '',
     'css'      : '',
     'less'     : '',
-    'md'       : '',
-    'markdown' : '',
+    'md'       : '',
+    'markdown' : '',
     'doc'      : '',
     'txt'      : '',
     'tex'      : '',
@@ -143,7 +143,7 @@ file_node_extensions = {
 
 dir_node_exact_matches = {
 # GNU/linux standard home stuff
-    '.git'                             : '',
+    '.git'                             : '',
     '.mozilla'                         : '',
     '.templates'                       : '',
     '.config'                          : '',
@@ -210,8 +210,8 @@ file_node_exact_matches = {
     'gulpfile.ls'                      : '',
     'makefile'                         : '',
     '.ds_store'                        : '',
-    '.gitconfig'                       : '',
-    '.gitignore'                       : '',
+    '.gitconfig'                       : '',
+    '.gitignore'                       : '',
     '.alias'                           : '',
     '.bashrc'                          : '',
     '.bashprofile'                     : '',
@@ -228,7 +228,6 @@ file_node_exact_matches = {
     '.Xresources'                      : '',
     '.dmrc'                            : '',
     '.fasd'                            : '',
-    '.gitconfig'                       : '',
     '.jack-settings'                   : '',
     '.mime.types'                      : '',
     '.nvidia-settings-rc'              : '',
@@ -245,13 +244,18 @@ file_node_exact_matches = {
 }
 
 def devicon(file):
+  folder_ico = ''
+  
+
+  if file.is_link:
+      folder_ico = ''
+      return dir_node_exact_matches.get(file.relative_path, folder_ico)
+
   if file.is_directory: 
-      folder_ico = ''
       if '/run/media/'+getuser() == file.dirname or '/mnt/' == file.dirname:
         folder_ico = '' 
-      elif file.is_link:
-        folder_ico = ''
       else:
         folder_ico = ''
       return dir_node_exact_matches.get(file.relative_path, folder_ico)
+
   return file_node_exact_matches.get(file.relative_path, file_node_extensions.get(file.extension, ''))
