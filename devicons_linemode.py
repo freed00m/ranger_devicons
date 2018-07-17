@@ -2,6 +2,7 @@ import ranger.api
 from ranger.core.linemode import LinemodeBase
 from devicons import *
 
+
 @ranger.api.register_linemode
 class DevIconsLinemode(LinemodeBase):
   name = "devicons"
