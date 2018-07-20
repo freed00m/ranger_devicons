@@ -116,6 +116,8 @@ file_node_extensions = {
     'flv'      : '',
     'mp4'      : '',
     'mp3'      : '',
+    'm4a'      : '',
+    'mp4a'     : '',
     'flac'     : '',
     'wav'      : '',
     'ogg'      : '',
